@@ -1,0 +1,192 @@
+/**
+ * 과제 테스트 샘플 css 코드
+ * 지원자의 스타일에 맞게 수정하셔도 무방합니다.
+ */
+
+/* //////////////////////////////////////////////////////////////////////// */
+/* reset */
+html,
+body,
+div,
+span,
+h1,
+h2,
+p,
+a,
+address,
+img,
+small,
+strong,
+i,
+dl,
+dt,
+dd,
+ul,
+li,
+form,
+label,
+article,
+figure,
+footer,
+header,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  border: 0;
+}
+
+a,
+a:visited,
+a:link,
+a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+}
+/* //////////////////////////////////////////////////////////////////////// */
+
+/* 레이아웃 */
+.container {
+  /* max-width: 100%; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.container .layout {
+  max-width: 760px;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container .layout .listWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .layout .listWrap li {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.container .layout .listWrap li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.container .layout .listWrap li:first-of-type {
+  margin-top: 1rem;
+}
+
+/* 토글 애니메이션 */
+@keyframes toggleUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes toggleDown {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 리스트 */
+div:where(.collapse, .expanded) {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.listWrap li .collapse {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.listWrap li .collapse .arrow,
+.listWrap li .collapse .delete {
+  cursor: pointer;
+}
+
+.listWrap li .expanded {
+  padding: 0 0 0 5.5rem;
+  line-height: 2rem;
+}
+
+/* 토글 클래스네임 */
+.listWrap li .expanded.on {
+  display: block;
+  animation: toggleUp 0.35s;
+}
+
+.listWrap li .expanded.off {
+  display: none;
+  animation: toggleDown 0.35s;
+}
+
+/* 화살표, X 이미지 */
+.listWrap li .collapse article.arrow {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.listWrap li .collapse article.delete {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.listWrap li .collapse article svg,
+.listWrap li .collapse article img {
+  width: 100%;
+  height: 100%;
+}

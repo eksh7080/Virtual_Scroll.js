@@ -1,0 +1,13 @@
+{
+  "arrowParens": "always",
+  "printWidth": 140,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "useTabs": false,
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true
+}

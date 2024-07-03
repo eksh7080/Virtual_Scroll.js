@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["dom", "dom.iterable", "ES6"], // TypeScript 컴파일러가 코드를 컴파일할 때 사용할 라이브러리를 지정
+    // path 설정
+    "baseUrl": "./"
+  },
+  "include": ["**/*.js"],
+  "exclude": ["node_modules"] // 볼필요없음
+}
