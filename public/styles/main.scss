@@ -1,0 +1,59 @@
+@import './reset.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  .layout {
+    max-width: 760px;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    .listWrap {
+      display: flex;
+      flex-direction: column;
+      li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 4px;
+        box-sizing: border-box;
+        &:first-of-type {
+          margin-top: 1rem;
+        }
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+
+        div:where(.collapse) {
+          font-size: 1.6rem;
+          font-weight: 600;
+        }
+        .collapse {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          .arrow,
+          .delete {
+            cursor: pointer;
+          }
+          .arrow {
+            width: 3.2rem;
+            height: 3.2rem;
+          }
+          .delete {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+          svg,
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

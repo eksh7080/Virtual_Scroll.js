@@ -41,7 +41,7 @@ section {
 }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -79,109 +79,61 @@ html {
   overflow: hidden;
   height: 100%;
 }
-/* //////////////////////////////////////////////////////////////////////// */
 
-/* 레이아웃 */
+/* //////////////////////////////////////////////////////////////////////// */
 .container {
-  /* max-width: 100%; */
   position: relative;
   width: 100%;
   height: 100%;
   overflow-y: auto;
 }
-
 .container .layout {
   max-width: 760px;
   position: relative;
   width: 100%;
   margin: 0 auto;
 }
-
 .container .layout .listWrap {
   display: flex;
   flex-direction: column;
 }
-
 .container .layout .listWrap li {
+  display: flex;
+  align-items: center;
   width: 100%;
   border: 1px solid #000;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-.container .layout .listWrap li:not(:last-of-type) {
-  margin-bottom: 1rem;
-}
-
 .container .layout .listWrap li:first-of-type {
   margin-top: 1rem;
 }
-
-/* 토글 애니메이션 */
-@keyframes toggleUp {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.container .layout .listWrap li:not(:last-of-type) {
+  margin-bottom: 1rem;
 }
-
-@keyframes toggleDown {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* 리스트 */
-div:where(.collapse, .expanded) {
+.container .layout .listWrap li div:where(.collapse) {
   font-size: 1.6rem;
   font-weight: 600;
 }
-
-.listWrap li .collapse {
+.container .layout .listWrap li .collapse {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-
-.listWrap li .collapse .arrow,
-.listWrap li .collapse .delete {
+.container .layout .listWrap li .collapse .arrow,
+.container .layout .listWrap li .collapse .delete {
   cursor: pointer;
 }
-
-.listWrap li .expanded {
-  padding: 0 0 0 5.5rem;
-  line-height: 2rem;
-}
-
-/* 토글 클래스네임 */
-.listWrap li .expanded.on {
-  display: block;
-  animation: toggleUp 0.35s;
-}
-
-.listWrap li .expanded.off {
-  display: none;
-  animation: toggleDown 0.35s;
-}
-
-/* 화살표, X 이미지 */
-.listWrap li .collapse article.arrow {
+.container .layout .listWrap li .collapse .arrow {
   width: 3.2rem;
   height: 3.2rem;
 }
-
-.listWrap li .collapse article.delete {
+.container .layout .listWrap li .collapse .delete {
   width: 1.6rem;
   height: 1.6rem;
 }
-
-.listWrap li .collapse article svg,
-.listWrap li .collapse article img {
+.container .layout .listWrap li .collapse svg,
+.container .layout .listWrap li .collapse img {
   width: 100%;
   height: 100%;
-}
+}/*# sourceMappingURL=main.css.map */

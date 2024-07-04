@@ -17,7 +17,7 @@ const rowMap = {}; // 렌더링 된 요소를 저장할 변수
  * json 배열 리스트 패칭
  */
 async function getDatas() {
-  const fetchMap = Array.from({ length: 10 }, (_, index) => `public/data/data${index}.json`);
+  const fetchMap = Array.from({ length: 10 }, (_, index) => `public/db/data${index}.json`);
   const fetchPromises = fetchMap.map((list) => fetch(list).then((res) => res.json()));
   const fetchDataArr = await Promise.all(fetchPromises);
   return fetchDataArr.flat();
@@ -88,7 +88,7 @@ async function render(offsets) {
 
   // 데이터 리스트 렌더링
   datas.forEach((data, index) => {
-    const { key, username, email, birthdate } = data;
+    const { key, name, date } = data;
 
     const rowIndex = index + 1; // 배열 인덱스는 0부터 시작하기 때문에 1을 더해줍니다.
     const mapItem = rowMap[rowIndex]; // {}로 인덱스별로 UI를 저장합니다.
@@ -111,20 +111,13 @@ async function render(offsets) {
                                 </g>
                               </svg>
                           </article>
-                          <p>key: ${key.substr(0, 8)}</p>
-                          <p>username: ${username}</p>
+                          <p>key: ${key}</p>
+                          <p>username: ${name}</p>
                           <article class="delete">
                             <img src="public/images/icon/delete.svg" alt="delete" />
                           </article>
                         </div>
-                        <div class="expanded off">
-                            <p>
-                                birthdate: ${birthdate}
-                            </p>
-                            <p>
-                                email: ${email}
-                            </p>
-                        </div>`;
+                        `;
 
         // 리스트 토글 기능 on/off
         nodeLi.children[0].firstElementChild.onclick = function () {
